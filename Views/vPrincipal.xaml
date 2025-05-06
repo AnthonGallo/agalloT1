@@ -2,50 +2,83 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="agalloT1.Views.vPrincipal"
-             Title="vPrincipal">
-    <VerticalStackLayout
-        Padding="20"
-        Spacing="20">
-        <Label 
-            Text="TALLER SEMANA 1!"
-            FontSize="20"
-            TextColor="Blue"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="Formulario de Inscripción">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+            <Label 
+                Text="TALLER SEMANA 1"
+                FontSize="20"
+                TextColor="Blue"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
 
-        <Label Text="Formulario de inscripción"
-               FontSize="15"
-               TextColor="Green"/>
+            <Label Text="Formulario de inscripción"
+                   FontSize="15"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   TextColor="Green"/>
 
-        <Image
-            Source="uisrael.png"
-            WidthRequest="300"/>
+            <Image
+                Source="uisrael.png"
+                WidthRequest="300"
+                HeightRequest="100"
+                Aspect="AspectFit"/>
 
-        <Image
-           Source="https://i.pinimg.com/736x/d9/25/f7/d925f7b201d3c392020ff42147313bd8.jpg"/>
+            <Label Text="DATOS PERSONALES" 
+                   FontAttributes="Bold"
+                   TextColor="Fuchsia"/>
 
-        <Entry x:Name="txtIdentificacion"
-               Placeholder="Identificación CI/Ruc/Pasaporte"/>
+            <Entry x:Name="txtIdentificacion"
+                   Placeholder="Identificación CI/Ruc/Pasaporte"
+                   MaxLength="13"
+                   Keyboard="Numeric"/>
 
-        <Entry x:Name="txtApellidos"
-               Placeholder="Apellidos completos"/>
+            <Entry x:Name="txtApellidos"
+                   Placeholder="Apellidos completos"/>
 
-        <Entry x:Name="txtNombres"
-               Placeholder="Nombres completos"/>
+            <Entry x:Name="txtNombres"
+                   Placeholder="Nombres completos"/>
 
-        <Entry x:Name="txtTelefono"
-               Placeholder="Número de teléfono móvil"
-               MaxLength="10"/>
+            <Entry x:Name="txtTelefono"
+                   Placeholder="Número de teléfono móvil"
+                   MaxLength="10"
+                   Keyboard="Telephone"/>
 
-        <Entry x:Name="txtCorreo"
-               Placeholder="Correo electrónico personal"/>
+            <Entry x:Name="txtCorreo"
+                   Placeholder="Correo electrónico personal"
+                   Keyboard="Email"/>
 
-        <Entry x:Name="txtCorreoConfirmar"
-               Placeholder="Confirmar correo personal"/>
+            <Entry x:Name="txtCorreoConfirmar"
+                   Placeholder="Confirmar correo personal"
+                   Keyboard="Email"/>
 
-        <Button x:Name="btnEnviar"
+            <Label Text="DATOS ACADÉMICOS" 
+                   FontAttributes="Bold"
+                   TextColor="Fuchsia"
+                   Margin="0,10,0,0"/>
+
+            <Entry x:Name="txtCarrera"
+                   Placeholder="Carrera que estudia"/>
+
+            <Entry x:Name="txtModalidad"
+                   Placeholder="Modalidad de estudios"/>
+
+            <Entry x:Name="txtCampus"
+                   Placeholder="Campus donde estudia"/>
+
+            <Button x:Name="btnEnviar"
                 Text="Enviar"
                 TextColor="White"
+                BackgroundColor="Green"
                 Clicked="btnEnviar_Clicked"/>
-    </VerticalStackLayout>
+
+            <Button x:Name="btnExportar"
+                Text="Exportar a TXT"
+                TextColor="White"
+                BackgroundColor="Blue"
+                Clicked="btnExportar_Clicked"/> 
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
